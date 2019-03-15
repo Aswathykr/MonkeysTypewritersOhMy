@@ -23,7 +23,7 @@ public class SafeCopier extends Copier{
             }
         }
     }
-    synchronized void copy(String str){
+    private synchronized void copy(String str){
         copied += str ;
     }
 }
