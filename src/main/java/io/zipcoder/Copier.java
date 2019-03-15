@@ -20,5 +20,19 @@ public abstract class Copier implements Runnable {
 
     }
 
+    protected synchronized boolean hasNextString(){
+        return stringIterator.hasNext();
+    }
+
+    protected synchronized String getNextString(){
+        if(stringIterator.hasNext()) {
+            String str = stringIterator.next();
+            if(stringIterator.hasNext())
+                str += " ";
+            return str;
+        }
+        return null;
+    }
+
     public abstract void run();
 }
